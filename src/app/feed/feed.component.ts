@@ -17,11 +17,11 @@ export class FeedComponent implements OnInit, OnDestroy {
 
   public feed: any;
   public currentUser: any;
-  public loading: boolean = true;
+  public loading = true;
 
   private type: Subject<string> = new Subject<string>();
-  private offset: number = 0;
-  private itemsPerPage: number = 10;
+  private offset = 0;
+  private itemsPerPage = 10;
   private feedSub: Subscription;
   private feedObs: ApolloQueryObservable<any>;
 
