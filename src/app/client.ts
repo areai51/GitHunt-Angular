@@ -1,7 +1,5 @@
 import ApolloClient, {createBatchingNetworkInterface} from 'apollo-client';
-import {Client} from 'subscriptions-transport-ws';
-
-import {addGraphQLSubscriptions} from './subscriptions';
+import {SubscriptionClient, addGraphQLSubscriptions} from 'subscriptions-transport-ws/dist/client';
 
 // Polyfill fetch
 import 'whatwg-fetch';
@@ -11,7 +9,9 @@ interface Result {
   __typename?: string;
 }
 
-const wsClient: Client = new Client('ws://localhost:8080');
+const wsClient: SubscriptionClient = new SubscriptionClient('ws://localhost:8080', {
+  reconnect: true
+});
 
 const networkInterface: any = createBatchingNetworkInterface({
   uri: '/graphql',
