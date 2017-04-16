@@ -39,7 +39,7 @@ export class FeedComponent implements OnInit, OnDestroy {
         offset: this.offset,
         limit: this.itemsPerPage
       },
-      forceFetch: true,
+      //forceFetch: true,
     });
 
     // Subscribe

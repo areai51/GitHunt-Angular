@@ -1,4 +1,4 @@
-import {print} from 'graphql-tag/printer';
+import gql from 'graphql-tag';
 import {Client} from 'subscriptions-transport-ws';
 
 // quick way to add the subscribe and unsubscribe functions to the network interface
@@ -6,7 +6,7 @@ export function addGraphQLSubscriptions(networkInterface: any, wsClient: Client)
   return Object.assign(networkInterface, {
     subscribe(request: any, handler: any): number {
       return wsClient.subscribe({
-        query: print(request.query),
+        query: gql(request.query),
         variables: request.variables,
       }, handler);
     },
