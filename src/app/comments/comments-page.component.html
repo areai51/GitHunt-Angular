@@ -37,8 +37,7 @@
   </div>
   <br/>
   <div *ngIf="entry.comments"
-       infinite-scroll
-       [infiniteScrollDistance]="0.2"
+    
        (scrolled)="loadMore()">
     <app-comment
       *ngFor="let comment of entry.comments"

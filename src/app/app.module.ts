@@ -4,6 +4,8 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ApolloModule } from 'apollo-angular';
+
+//-- Commenting out Angular2 Emoji & Infinite Scrolls as they haven't been upgraded to support the latest angular CLI and angular 4.x --/ 
 //import { EmojifyModule } from 'angular2-emojify';
 
 import { AppComponent } from './app.component';
@@ -36,7 +38,7 @@ import { provideClient } from './client';
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     ApolloModule.forRoot(provideClient),
-    //EmojifyModule,
+  //  EmojifyModule,
    // InfiniteScrollModule
   ],
   bootstrap: [ AppComponent ],
